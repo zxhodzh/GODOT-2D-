@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv1lolfvxmh83"]
+
+[ext_resource type="Script" path="res://脚本/爆炸.gd" id="1_27li5"]
+
+[sub_resource type="Curve" id="Curve_ik47n"]
+_data = [Vector2(0.0160428, 1), 0.0, 0.0, 0, 0, Vector2(0.962567, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="爆炸" type="CPUParticles2D"]
+z_index = 99
+emitting = false
+amount = 22
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 110.0
+scale_amount_min = 11.0
+scale_amount_max = 16.0
+scale_amount_curve = SubResource("Curve_ik47n")
+color = Color(0.721569, 0.243137, 0.243137, 1)
+script = ExtResource("1_27li5")

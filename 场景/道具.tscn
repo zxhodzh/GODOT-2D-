@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://l433c5d3rykc"]
+
+[ext_resource type="Texture2D" uid="uid://cwodfdjir68jt" path="res://assets/items/health_box.png" id="1_nncwk"]
+[ext_resource type="Script" path="res://脚本/道具.gd" id="1_oeda4"]
+[ext_resource type="AudioStream" uid="uid://di2p4xwb1340l" path="res://assets/Sounds/confirmation_002.ogg" id="3_wf6hj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_882bl"]
+size = Vector2(34, 35)
+
+[node name="道具" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_oeda4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nncwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_882bl")
+
+[node name="拾取音效" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wf6hj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="拾取音效" to="." method="_on_拾取音效_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://brii2hwuoyarv"]
+
+[ext_resource type="Texture2D" uid="uid://txysa54jrj7j" path="res://assets/items/heart.png" id="1_xt3sm"]
+[ext_resource type="Texture2D" uid="uid://dpj0bd1ba6sm8" path="res://assets/enemies/goblin/goblin_idle_anim_f0.png" id="2_n26ym"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv5cs"]
+bg_color = Color(0.305882, 0.560784, 0.956863, 1)
+border_color = Color(0, 0, 0, 1)
+
+[node name="用户界面" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 768.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dv5cs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("1_xt3sm")
+
+[node name="生命Label" type="Label" parent="."]
+offset_left = 50.0
+offset_right = 95.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 30
+text = "x 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="关卡Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.5
+offset_right = 53.5
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = " 关卡：1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(669, 12)
+scale = Vector2(4.4, 4.4)
+texture = ExtResource("2_n26ym")
+
+[node name="敌人Label" type="Label" parent="."]
+offset_left = 702.0
+offset_right = 761.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 30
+text = "x 10"
+horizontal_alignment = 1
+vertical_alignment = 1

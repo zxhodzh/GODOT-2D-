@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://buo2lcvoq4lub"]
+
+[ext_resource type="Script" path="res://脚本/开始菜单.gd" id="1_la3td"]
+[ext_resource type="PackedScene" uid="uid://byyvx6ao125ij" path="res://场景/地图.tscn" id="2_87afm"]
+[ext_resource type="Texture2D" uid="uid://cke0ncr3htr31" path="res://assets/bullet1.png" id="3_uxsut"]
+[ext_resource type="Texture2D" uid="uid://cy1utw80r1umm" path="res://assets/player/SW/player_SW_1.png" id="4_jqsi1"]
+[ext_resource type="Texture2D" uid="uid://dasobk16s1fun" path="res://assets/enemies/goblin/goblin_run_anim_f1.png" id="5_25xuf"]
+[ext_resource type="PackedScene" uid="uid://brii2hwuoyarv" path="res://场景/用户界面.tscn" id="6_6cse0"]
+
+[node name="开始菜单" type="Node2D"]
+script = ExtResource("1_la3td")
+
+[node name="地图" parent="." instance=ExtResource("2_87afm")]
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 49.0
+offset_top = 537.0
+offset_right = 272.0
+offset_bottom = 646.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 38
+text = "开始游戏"
+
+[node name="Button2" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 495.0
+offset_top = 533.0
+offset_right = 718.0
+offset_bottom = 642.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 38
+text = "退出游戏"
+
+[node name="Bullet1" type="Sprite2D" parent="."]
+position = Vector2(357, 381)
+texture = ExtResource("3_uxsut")
+
+[node name="Bullet2" type="Sprite2D" parent="."]
+position = Vector2(312, 415)
+texture = ExtResource("3_uxsut")
+
+[node name="Bullet3" type="Sprite2D" parent="."]
+position = Vector2(265, 449)
+texture = ExtResource("3_uxsut")
+
+[node name="Bullet4" type="Sprite2D" parent="."]
+position = Vector2(222, 483)
+texture = ExtResource("3_uxsut")
+
+[node name="PlayerSw1" type="Sprite2D" parent="."]
+position = Vector2(410, 346)
+scale = Vector2(4, 4)
+texture = ExtResource("4_jqsi1")
+
+[node name="GoblinIdleAnimF2" type="Sprite2D" parent="."]
+position = Vector2(156, 509)
+scale = Vector2(4, 4)
+texture = ExtResource("5_25xuf")
+
+[node name="用户界面" parent="." instance=ExtResource("6_6cse0")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
