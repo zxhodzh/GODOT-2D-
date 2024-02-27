@@ -52,7 +52,7 @@ func _physics_process(_delta):
 		animated_sprite_2d.play()  #假如有移动就播放动画
 	else:
 		animated_sprite_2d.stop()
-		animated_sprite_2d.frame = 1 #否则就不播放动画 而是播放动画中的1号帧
+		animated_sprite_2d.frame = 4 #否则就不播放动画 而是播放动画中的1号帧
 
 func boost():
 	$加速Timer.start()
